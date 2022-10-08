@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+.log-reg{
+    width: 50%;
+    padding: 5%;
+}
+
+h3{
+    text-align: center;
+    background-color: rgb(30, 30, 82);
+    padding: 1%;
+    color: white;
+}
+
+
+.add-button{
+    margin: 0 auto;
+}
+#add-button{
+    background-color: rgb(30, 30, 82);
+    border: 4px solid rgb(30, 30, 82);
+    font-weight: bold;
+    box-shadow: 2px 2px 2px gray;
+    padding: 1%;
+    
+}
+
+.errors{
+    margin-left: 40px;
+    color: red;
+}
+
+.errors li{
+    margin-left: 25px;
+}
+
+.main-books{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 2px solid black;
+}
+
+
+.books_container{
+    width: 80%;
+    padding: 2%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+.main_books{
+    width: 60%;
+
+}
+
+.add_book_header{
+    text-align: center;
+    background-color: rgb(30, 30, 82);
+    padding: 1%;
+    color: white;
+}
+
+.datatable{
+    width: 40%;
+    border: 2px solid rgb(30, 30, 82);
+    padding: 1%;
+}
+.datatable1{
+    width: 40%;
+    border: 2px solid rgb(30, 30, 82);
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.book_title{
+    color: rgb(58, 58, 151);
+    font-weight: bold;
+}
+
+.book_header{
+    background-color: rgb(30, 30, 82);
+    padding: 1%;
+    color: white;
+}
+.list_of_likes{
+    margin-left: 25px;
+}
+
+.update_btns{
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    margin: 2%;
+
+}
+
+#desc_update{
+    border: 2px solid black;
+    font-weight: bold;
+    color: black;
+    padding: 1% 0 1% 2px;
+    
+}
+
+#title_update{
+    font-weight: bold;
+    padding: 1% 0 1% 2px;
+}
+
+.book_title_home{
+    background-color: rgb(212, 212, 212);
+    font-weight: bold;
+}
+
+
+.header_right{
+    display: flex;
+    width: 55%;
+    justify-content: right;
+    gap: 7%;
+}
+
+.tree_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 1%;
+    padding-bottom: 0;
+}
+
+.tree_header_bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 2px solid black;
+    align-items: center;
+    
+    padding: 1%;
+}
+
+.tablecontent{
+    margin-left: 20px;
+}
+
+#tree-button{
+    background-color: rgb(30, 30, 82);
+    border: 4px solid rgb(30, 30, 82);
+    font-weight: bold;
+    box-shadow: 2px 2px 2px gray;
+    
+}

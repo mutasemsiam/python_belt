@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbortrary</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="books_container">
+        
+        <header class="tree_header">
+
+            <h5><strong>Arbortrary</strong></h5>
+            <div class="header_right">
+                <a href="/{{user.first_name}}/account">My Trees</a>
+                <h6>Welcome {{request.session.first_name}}!</h6>
+            
+            </div>
+        </header>
+        <header class="tree_header_bottom">
+
+            <p><strong>A site to track randomly planted trees</strong></p>
+            <div class="header_right">
+                <form action="/dashboard/" method="get">
+                <!-- {% csrf_token %} -->
+                <button type="submit" class="btn btn-primary form-control col-sm-12" id="tree-button">Dashboard</button>
+                </form>
+                <form action="/logout">
+                <button type="submit" class="btn btn-primary form-control col-sm-12" id="tree-button">Logout</button>
+                </form>
+            </div>
+
+        </header>
+        <div class="main_books">
+            <form action="add_tree" method="post">
+                {% csrf_token %}
+                <h5 class="add_book_header">Plant a Tree</h5>
+                <div class="form-group row">
+                    <label for="inputSpecies" class="col-sm-3 col-form-label">Species</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputSpecies" placeholder="Species" name="species"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputLoc" class="col-sm-3 col-form-label">Location</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputLoc" placeholder="Location" name="location"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputRes" class="col-sm-3 col-form-label">Reason</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputRes" placeholder="reason" name="reason"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputD" class="col-sm-3 col-form-label">Date Planted</label>
+                    <div class="col-sm-7">
+                        <input type="date" class="form-control" id="inputD" name="date_planted" required>
+                    </div>
+                </div>
+    
+                <div class="col-sm-4 add-button">
+                    <button type="submit" class="btn btn-primary form-control" id="add-button">Plant</button>
+                </div>
+
+            </form>
+            <div class="errors">
+                {% if messages %}
+                <h5><strong>Errors:</strong></h5>
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

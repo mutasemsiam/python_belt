@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div>
+        <div class="main">
+            <div class="form-row twoforms">
+                <form class="log-reg" action="register" method="post">
+                    {% csrf_token %}
+                    <h3>Registration</h3>
+                    <div class="form-group row">
+                        <label for="inputfirstName" class="col-sm-3 col-form-label">First Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputfirstName" placeholder="First Name"
+                                name="first_name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputlastName" class="col-sm-3 col-form-label">Last Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputlastName" placeholder="Last Name"
+                                name="last_name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password"
+                                name="password" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPasswordC" class="col-sm-3 col-form-label">Confirm PW</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPasswordC"
+                                placeholder="Confirm Password" name="confirm_password" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputBD" class="col-sm-3 col-form-label">Birthday</label>
+                        <div class="col-sm-7">
+                            <input type="date" class="form-control" id="inputBD" name="birth_date" required>
+                        </div>
+                    </div>
+                    <input type="hidden" name="form-button" value="register">
+                    <div class="col-sm-4 add-button">
+                        <button type="submit" class="btn btn-primary form-control" id="add-button">Register</button>
+                    </div>
+
+                </form>
+
+                <form class="log-reg" action="login" method="post">
+                    {% csrf_token %}
+                    <h3>Login</h3>
+                    <div class="form-group row">
+                        <label for="inputFirst" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputFirst" placeholder="Email" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputLast" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputLast" placeholder="Password"
+                                name="password">
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="form-button" value="login">
+                    <div class="col-sm-4 add-button">
+                        <button type="submit" class="btn btn-primary form-control" id="add-button">Log In</button>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="errors">
+                {% if messages %}
+                <h5><strong>Errors:</strong></h5>
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
